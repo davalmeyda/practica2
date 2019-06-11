@@ -15,8 +15,41 @@ class CardPage extends StatelessWidget {
         padding: EdgeInsets.all(10.0),
         children: <Widget>[
           _cardTipo1(),
-          SizedBox( height: 30.0),
+          SizedBox(height: 30.0),
           _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
         ],
       ),
     );
@@ -24,6 +57,8 @@ class CardPage extends StatelessWidget {
 
   Widget _cardTipo1() {
     return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+      elevation: 10.0,
       child: Column(
         children: <Widget>[
           ListTile(
@@ -51,24 +86,31 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardTipo2() {
-
     return Card(
-      child: Column(
-        children: <Widget>[
-          FadeInImage(
-            image: NetworkImage('https://valladolidenbici.files.wordpress.com/2018/06/31-mayo-042.jpg'),
-            placeholder: AssetImage('assets/jar-loading.gif'),
-            height: 280.0,
-            fadeInDuration: Duration(microseconds: 200),
-            fit: BoxFit.cover,
-          ),
-          Container(
-            padding: EdgeInsets.all(10.0),
-            child: Text('no se que poner aqui'),
-          )
-        ],
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+      elevation: 10.0,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            FadeInImage(
+              image: NetworkImage(
+                  'https://valladolidenbici.files.wordpress.com/2018/06/31-mayo-042.jpg'),
+              placeholder: AssetImage('assets/jar-loading.gif'),
+              height: 280.0,
+              fadeInDuration: Duration(microseconds: 200),
+              fit: BoxFit.cover,
+            ),
+            Container(
+              padding: EdgeInsets.all(10.0),
+              child: Center(
+                child: Text('no se que poner aqui'),
+              ),
+            )
+          ],
+        ),
       ),
     );
-
   }
 }
