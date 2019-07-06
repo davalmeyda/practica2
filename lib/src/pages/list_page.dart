@@ -40,18 +40,21 @@ class _ListPageState extends State<ListPage> {
   }
 
   Widget _crearLista() {
-    return ListView.builder(
-      controller: _scroll,
-      itemCount: _lista.length,
-      itemBuilder: (context, i) {
-        double _alto = 246.7;
+    return RefreshIndicator(
+      onRefresh: refrescar,
+      child: ListView.builder(
+        controller: _scroll,
+        itemCount: _lista.length,
+        itemBuilder: (context, i) {
+          double _alto = 246.7;
 
-        return FadeInImage.assetNetwork(
-          height: _alto,
-          image: 'https://picsum.photos/id/${_lista[i]}/500/300',
-          placeholder: 'assets/jar-loading.gif',
-        );
-      },
+          return FadeInImage.assetNetwork(
+            height: _alto,
+            image: 'https://picsum.photos/id/${_lista[i]}/500/300',
+            placeholder: 'assets/jar-loading.gif',
+          );
+        },
+      ),
     );
   }
 
@@ -101,5 +104,15 @@ class _ListPageState extends State<ListPage> {
     } else {
       return Container();
     }
+  }
+
+  Future<Null> refrescar() {
+    return Future.delayed(Duration(seconds: 2), () {
+      setState(() {
+        _contador++;
+        _lista.clear();
+        _agregar10();
+      });
+    });
   }
 }

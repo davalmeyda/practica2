@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart' as prefix0;
 import 'package:flutter/material.dart';
 
 class SliderPage extends StatefulWidget {
